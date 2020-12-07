@@ -8,6 +8,7 @@ require("express-ws")(app);
 
 const users = require("./app/users");
 const chat = require("./app/chat");
+const onlineUsers = require("./app/onlineUsers");
 const config = require("./config");
 const port = 8000;
 
@@ -20,6 +21,7 @@ const run = async () => {
 
   app.use("/users", users);
   app.use("/chatroom", chat);
+  app.use("/onlineUsers", onlineUsers)
 
   console.log("Connected to mongo DB");
 
