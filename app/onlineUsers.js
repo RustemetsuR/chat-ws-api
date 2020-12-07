@@ -47,11 +47,9 @@ router.delete("/", async (req, res) => {
     }
 
     const onlineUser = OnlineUser.find({username: user.username});
-    console.log(onlineUser);
 
     try {
         await onlineUser.remove();
-        console.log("deleted");
         res.send({message: 'Success'});
     } catch (e) {
         res.sendStatus(500);
